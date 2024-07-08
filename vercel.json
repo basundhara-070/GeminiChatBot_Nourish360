@@ -1,0 +1,12 @@
+{
+    "version": 2,
+    "builds": [
+      { "src": "server.js", "use": "@vercel/node" }
+    ],
+    "routes": [
+      { "src": "/chat", "dest": "/server.js" },
+      { "src": "/loader.gif", "dest": "/loader.gif" },
+      { "src": "/(.*)", "dest": "/index.html" }
+    ]
+  }
+  
