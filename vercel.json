@@ -1,12 +1,30 @@
 {
-  "version" :2,
-  "builds":[
-      {"src":"*.js", "use":"@vercel/node"}
+  "version": 2,
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "loader.gif",
+      "use": "@vercel/static"
+    }
   ],
-  "routes":[
-      {
-          "src":"/(.*)",
-          "dest" :"/"
-      }
-  ]
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/loader.gif",
+      "dest": "/loader.gif"
+    }
+  ],
+  "env": {
+    "API_KEY": "AIzaSyCCGVF7WixN7u7A5IrZ7hwaUQ1KDO2k8Yo"
+  }
 }
