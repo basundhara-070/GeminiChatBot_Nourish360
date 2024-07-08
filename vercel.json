@@ -3,25 +3,28 @@
   "builds": [
     {
       "src": "server.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "index.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "loader.gif",
-      "use": "@vercel/static"
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["index.html", "loader.gif"]
+      }
     }
   ],
   "routes": [
     {
       "src": "/",
-      "dest": "/server.js"
+      "dest": "/index.html"
     },
     {
       "src": "/loader.gif",
       "dest": "/loader.gif"
+    },
+    {
+      "src": "/chat",
+      "dest": "/chat"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ],
   "env": {
